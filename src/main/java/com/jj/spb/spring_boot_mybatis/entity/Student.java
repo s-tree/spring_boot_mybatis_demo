@@ -4,6 +4,10 @@ public class Student {
 
     private Integer id;
     /**
+     * 学号
+     */
+    private Integer studyNum;
+    /**
      * 名字
      */
     private String name;

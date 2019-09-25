@@ -4,6 +4,7 @@
 
     <resultMap id="StudentResultMap" type="com.jj.spb.spring_boot_mybatis.entity.Student">
         <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="studyNum" jdbcType="INTEGER" property="studyNum" />
         <result column="name" jdbcType="VARCHAR" property="name" />
         <result column="sex" jdbcType="CHAR" property="sex" />
         <result column="age" jdbcType="INTEGER" property="age" />
@@ -14,5 +15,18 @@
     <select id="find" resultType="com.jj.spb.spring_boot_mybatis.entity.Student">
         select * from student where id = #{id}
     </select>
+
+    <sql id="create">
+        CREATE TABLE `student` (
+          `id` int(32) NOT NULL AUTO_INCREMENT,
+          `studyNum` int(4) DEFAULT 0,
+          `name` varchar(32) NOT NULL,
+          `sex` char(2) NOT NULL,
+          `age` int(4) DEFAULT 0,
+          `height` int(4) DEFAULT 0,
+          `weight` int(4) DEFAULT 0,
+          PRIMARY KEY (`id`)
+        )
+    </sql>
 
 </mapper>
