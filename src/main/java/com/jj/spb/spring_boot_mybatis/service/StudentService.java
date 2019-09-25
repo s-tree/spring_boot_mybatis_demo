@@ -10,7 +10,7 @@ public class StudentService {
     @Autowired
     StudentMapper studentMapper;
 
-    public Student find(int id){
+    public Student find(String id){
         return studentMapper.find(id);
     }
 }

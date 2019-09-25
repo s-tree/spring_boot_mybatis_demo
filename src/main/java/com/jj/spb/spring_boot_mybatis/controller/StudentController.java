@@ -14,6 +14,7 @@ public class StudentController {
 
     @RequestMapping("/test")
     public String findStudent(){
-        return studentService.find(1).getName();
+        System.out.println("called findStudent");
+        return studentService.find("1").getName();
     }
 }

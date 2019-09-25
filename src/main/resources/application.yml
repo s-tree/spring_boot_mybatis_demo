@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8080
 
 spring:
   datasource:
@@ -9,10 +9,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:
-  mapper-locations: classpath:mapping/*Mapper.xml
-  type-aliases-package: com.jj.spb.spring_boot_mybatis
-  configuration:
-    database-id: springweb
+  #  classpath:mapping/*.Mapping.xml  matching  xml's fileName
+  mapper-locations: classpath:mapping/*Mapping.xml
+  type-aliases-package: com.jj.spb.spring_boot_mybatis.entity
 
 #showsql
 logging:

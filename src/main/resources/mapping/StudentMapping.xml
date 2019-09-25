@@ -12,7 +12,7 @@
         <result column="weight" jdbcType="INTEGER" property="weight" />
     </resultMap>
 
-    <select id="find" resultType="com.jj.spb.spring_boot_mybatis.entity.Student">
+    <select id="find" resultType="com.jj.spb.spring_boot_mybatis.entity.Student" parameterType="java.lang.String" resultMap="StudentResultMap">
         select * from student where id = #{id}
     </select>
 
