@@ -16,6 +16,16 @@
         select * from student where id = #{id}
     </select>
 
+    <select id="queryStudentCountByNum" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM student where studyNum = #{studyNum}
+    </select>
+
+    <insert id="addStudent">
+        INSERT INTO
+            student (studyNum,name,sex,age,height,weight)
+            VALUES (#{studyNum},#{name},#{sex},#{age},#{height},#{weight})
+    </insert>
+
     <sql id="create">
         CREATE TABLE `student` (
           `id` int(32) NOT NULL AUTO_INCREMENT,
