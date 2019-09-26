@@ -20,6 +20,11 @@ public class StudentService {
         return studentMapper.addStudent(name,age,sex,studyNum,height,weight);
     }
 
+    public Integer updateStudent(String name,int age,String sex,
+                              int studyNum,int height,int weight){
+        return studentMapper.updateStudent(name,age,sex,studyNum,height,weight);
+    }
+
     public Integer queryStudentCountByNum(int studyNum){
         return studentMapper.queryStudentCountByNum(studyNum);
     }

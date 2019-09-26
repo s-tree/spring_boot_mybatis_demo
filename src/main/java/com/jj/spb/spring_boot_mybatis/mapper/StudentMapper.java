@@ -16,5 +16,12 @@ public interface StudentMapper {
                        @Param("height") int height,
                        @Param("weight") int weight);
 
+    Integer updateStudent(@Param("name") String name,
+                       @Param("age") int age,
+                       @Param("sex") String sex,
+                       @Param("studyNum") int studyNum,
+                       @Param("height") int height,
+                       @Param("weight") int weight);
+
     Integer queryStudentCountByNum(@Param("studyNum") int studyNum);
 }

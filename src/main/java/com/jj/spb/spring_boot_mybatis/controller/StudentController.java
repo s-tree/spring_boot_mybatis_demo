@@ -29,11 +29,13 @@ public class StudentController {
                              @RequestParam(name = "height",required = false,defaultValue = "0") int height,
                              @RequestParam(name = "weight",required = false,defaultValue = "0") int weight){
         System.out.println("called addStudent");
-        if(studentService.queryStudentCountByNum(studyNum) != 0){
-            return ResultFactory.buildResultBody(false,null,401,"该学号已经录入过了");
+        int resultCount = 0;
+        if(studentService.queryStudentCountByNum(studyNum) == 0){
+            resultCount = studentService.addStudent(name,age,sex,studyNum,height,weight);
+        }else{
+            resultCount = studentService.updateStudent(name,age,sex,studyNum,height,weight);
         }
-        int result = studentService.addStudent(name,age,sex,studyNum,height,weight);
-        if(result == 1){
+        if(resultCount == 1){
             return ResultFactory.buildResultBody(true,null,200,"录入成功");
         }
         return ResultFactory.buildResultBody(false,null,500,"录入失败");
